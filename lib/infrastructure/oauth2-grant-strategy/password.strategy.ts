@@ -36,7 +36,7 @@ export class PasswordStrategy implements Oauth2GrantStrategyInterface {
   ): Promise<boolean> {
     if (
       (client.clientSecret && client.clientSecret !== request.clientSecret) ||
-      client.deletedAt !== null ||
+      client.deletedAt != null ||
       !client.grants.includes(request.grantType)
     ) {
       return false;
